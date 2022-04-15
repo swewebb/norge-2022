@@ -1,0 +1,275 @@
+/* Global Settings */
+
+:root {
+  --clr-red: #f65058;
+  --clr-blue: #3f4a75;
+  --clr-white: #ffffff;
+  --clr-black: #2e3440;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: var(--clr-black);
+}
+
+/* Global Layout */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 800px) {
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 7fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .header,
+  .footer {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header__logo {
+  color: var(--clr-blue);
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.header__link {
+  text-decoration: none;
+  color: var(--clr-red);
+}
+
+.header__link:hover {
+  color: var(--clr-blue);
+}
+
+@media screen and (min-width: 800px) {
+  .header {
+    display: flex;
+    justify-content: start;
+  }
+
+  .header__logo {
+    font-weight: bold;
+    font-size: 4rem;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+}
+
+/* Global Navigation */
+
+.globalnav {
+  font-weight: normal;
+}
+
+.globalnav__list {
+  /* background-color: var(--clr-blue); */
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.globalnav__item {
+  padding: 0.2rem;
+}
+
+.globalnav__link {
+  background-color: var(--clr-blue);
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.2rem 0.5rem;
+  width: 100%;
+  color: var(--clr-white);
+}
+
+.globalnav__link:hover {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+}
+
+@media screen and (min-width: 800px) {
+  .globalnav {
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+  }
+
+  .globalnav__list {
+    display: block;
+    font-size: 1.2rem;
+  }
+
+  .globalnav__item {
+    padding: 0.5rem 0.2rem;
+  }
+
+  .globalnav__link {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+/* Content */
+
+.content {
+  /* background-color: yellowgreen; */
+  padding: 1rem 1.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    /* background-color: orange; */
+    max-width: 1000px;
+  }
+}
+
+/* Footer */
+
+.footer {
+  background-color: var(--clr-blue);
+  padding: 1rem;
+  color: var(--clr-white);
+}
+
+/* Index */
+.index__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.index__resa {
+  /* background-color: aqua;
+ */
+  display: grid;
+}
+
+.index__headline {
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+  /* background: teal; */
+}
+
+.index__image {
+  display: block;
+  width: 100%;
+}
+
+.index__info {
+  justify-self: center;
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.index__info:hover {
+  cursor: pointer;
+  background-color: var(--clr-blue);
+}
+
+.index__slideshow {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .index__slideshow {
+    display: block;
+    padding-top: 4rem;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  .index__slideshow > img {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* STORA RESAN */
+
+.large-trip__details summary {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--clr-red);
+}
+
+.large-trip__details h3 {
+  font-size: 1.2rem;
+}
+
+.large-trip__pics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.large-trip__pics > img {
+  width: 100%;
+}
+
+.price {
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 2rem 0;
+  background-color: var(--clr-red);
+  display: inline-block;
+  transform: rotate(-5deg);
+  color: var(--clr-white);
+}
+
+.price::before {
+  content: "Pris: ";
+}
+
+/* LILLA RESAN */
+
+.small-trip__img {
+  max-width: 500px;
+  margin: 1rem auto 2rem auto;
+}
+
+.small-trip__img img {
+  display: block;
+  border-radius: 50%;
+  border: 1rem solid var(--clr-red);
+  width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .small-trip__img {
+    margin: 1rem 0 2rem 0;
+  }
+}
